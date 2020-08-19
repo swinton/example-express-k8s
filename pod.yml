@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: example-express-k8s
+  labels:
+    name: example-express-k8s
+spec:
+  containers:
+  - name: example-express-k8s
+    image: swinton/example-express-k8s:1
+    ports:
+    - containerPort: 2087

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example-express-k8s-deployment
+  labels:
+    app: example-express-k8s
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: example-express-k8s
+  template:
+    metadata:
+      labels:
+        app: example-express-k8s
+    spec:
+      containers:
+      - name: example-express-k8s
+        image: swinton/example-express-k8s:1
+        ports:
+        - containerPort: 2087
